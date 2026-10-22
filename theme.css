@@ -1,0 +1,76 @@
+:root{--green:#bd3458;--dark:#751d39;--cream:#fff7f8;--muted:#746a6d;--line:#f0dce1;--orange:#db748b}
+body{background:var(--cream)}
+.logo span,.nav-links a:hover,.price,.icon,.dashboard-heading .kicker,.field-note,.floor-level-heading span,.request-document-link{color:var(--green)}
+.hero{background-image:linear-gradient(90deg,rgba(66,16,34,.84),rgba(66,16,34,.15)),url('https://images.unsplash.com/photo-1566665797739-1674de7a421a?auto=format&fit=crop&w=1800&q=85')}
+.kicker{color:#f8dce4}
+.search{box-shadow:0 10px 32px #7c253816;border-color:var(--line)}
+.search button,.book,.dashboard-button,.request-submit{background:var(--green)}
+.search button:hover,.book:hover,.dashboard-button:hover{background:var(--dark)}
+.features span,.double-room-note,.room-tile{background:#fff0f3}
+.features span{color:#69575d}
+.benefits,.floor-plan,.dashboard{background:#fff0f3}
+.dashboard,.floor-plan,.floor-level{border-color:var(--line)}
+.room-tile{border-color:#f0dce1}
+.request-dialog::backdrop{background:#36101dcc}
+.request-room-summary{background:#fff0f3;color:var(--dark)}
+.request-status.success{color:var(--green)}
+.progress-track{background:#f5e9ec}
+.progress-fill,.bar.booking-bar{background:var(--green)}
+.bar.revenue-bar{background:var(--orange)}
+.booking-legend:before{background:var(--green)}
+.revenue-legend:before{background:var(--orange)}
+.nav-links a[href="student.html"]{display:inline!important}
+.public-availability{margin:0 0 34px;padding:20px;background:#fff0f3;border:1px solid var(--line);border-radius:11px}
+.public-availability-heading{display:flex;justify-content:space-between;align-items:end;gap:16px;margin-bottom:14px}
+.public-availability-heading h2{margin:7px 0;font-size:22px}
+.public-availability-heading p:not(.kicker){margin:0;color:var(--muted);font-size:12px;line-height:1.5}
+.public-availability-heading .secondary-button{flex:none;width:auto}
+.public-room-availability{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
+.public-room-availability span{padding:7px 10px;border-radius:20px;background:#fde6ec;color:var(--dark);font-size:11px;font-weight:bold}
+.availability-metrics{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
+.availability-chart{margin-top:14px;padding:17px;background:#fff;border:1px solid var(--line);border-radius:10px}
+.availability-chart-key{display:flex;flex-wrap:wrap;gap:16px;color:var(--muted);font-size:12px}
+.availability-chart-key i{display:inline-block;width:9px;height:9px;margin-right:6px;border-radius:50%}
+.occupied-key{background:var(--green)}
+.available-key{background:#f5bac8}
+.availability-chart .progress-track{height:20px;margin-top:13px}
+.availability-chart .progress-fill{background:var(--green)}
+.chart-caption{margin:9px 0 0;color:var(--muted);font-size:12px}
+.student-request-error{color:#a72e26!important}
+.staff-carousel{margin:-8px 0 24px}
+.staff-carousel-image-wrap{position:relative;height:clamp(230px,30vw,340px);overflow:hidden;border-radius:12px;background:#f5e9ec}
+.staff-carousel-image{display:block;width:100%;height:100%;object-fit:cover;object-position:center 55%}
+.staff-carousel-shade{position:absolute;inset:0;background:linear-gradient(90deg,#36101dcc 0%,#36101d70 50%,#36101d08 100%)}
+.staff-carousel-content{position:absolute;left:clamp(20px,5vw,54px);bottom:28px;max-width:440px;color:white}
+.staff-carousel-content .kicker{color:#ffdce5}
+.staff-carousel-content h2{margin:9px 0;font-size:clamp(25px,4vw,38px);letter-spacing:-1px}
+.staff-carousel-content p:last-child{margin:0;color:#fff0f3;font-size:13px}
+.staff-carousel-control{position:absolute;z-index:1;top:50%;display:grid;place-items:center;width:40px;height:40px;transform:translateY(-50%);border:1px solid #ffffff80;border-radius:50%;background:#36101d99;color:white;font-size:28px;line-height:1;cursor:pointer}
+.staff-carousel-control:hover{background:var(--dark)}
+.staff-carousel-control:focus-visible,.staff-carousel-dot:focus-visible{outline:3px solid #bd345880;outline-offset:3px}
+.staff-carousel-previous{left:14px}
+.staff-carousel-next{right:14px}
+.staff-carousel-footer{display:flex;justify-content:space-between;align-items:center;padding:9px 3px;color:var(--muted);font-size:11px}
+.staff-carousel-dots{display:flex;align-items:center;gap:7px}
+.staff-carousel-dot{width:9px;height:9px;padding:0;border:0;border-radius:50%;background:#e2bdc7;cursor:pointer}
+.staff-carousel-dot.active{width:22px;border-radius:8px;background:var(--green)}
+.nav{animation:francee-rise-in .55s ease-out both}
+.hero-copy{animation:francee-rise-in .7s .08s ease-out both}
+.search{animation:francee-rise-in .55s .14s ease-out both}
+main>.heading{animation:francee-rise-in .55s .08s ease-out both}
+.cards>.card{animation:francee-rise-in .55s ease-out both;transition:transform .22s ease,box-shadow .22s ease}
+.cards>.card:nth-child(2){animation-delay:.08s}
+.cards>.card:nth-child(3){animation-delay:.16s}
+.cards>.card:hover,.student-room-card:hover{transform:translateY(-5px);box-shadow:0 14px 30px #7c25381a}
+.benefits,.floor-plan,.dashboard,.staff-carousel{animation:francee-rise-in .6s .12s ease-out both}
+.benefit,.floor-level,.metric-card,.chart-card,.record-card,.report-panel{transition:transform .2s ease,box-shadow .2s ease}
+.benefit:hover,.metric-card:hover,.chart-card:hover{transform:translateY(-3px);box-shadow:0 10px 24px #7c253812}
+.staff-carousel-image.photo-change{animation:francee-photo-change .45s ease-out both}
+.staff-carousel-control,.staff-carousel-dot,.search button,.book,.dashboard-button,.secondary-button,.request-submit,.nav-links a{transition:color .2s ease,background-color .2s ease,border-color .2s ease,box-shadow .2s ease,transform .2s ease}
+.staff-carousel-control:hover,.staff-carousel-dot:hover,.search button:hover,.book:hover,.dashboard-button:hover,.secondary-button:hover,.request-submit:hover{transform:translateY(-2px)}
+@keyframes francee-rise-in{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:translateY(0)}}
+@keyframes francee-photo-change{from{opacity:.45;transform:scale(1.025)}to{opacity:1;transform:scale(1)}}
+@media(max-width:760px){.availability-metrics{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:540px){.public-availability{padding:15px}.public-availability-heading{align-items:start;flex-direction:column}.public-availability-heading h2{font-size:20px}}
+@media(max-width:540px){.staff-carousel-image-wrap{height:250px}.staff-carousel-control{top:18px;width:34px;height:34px;transform:none}.staff-carousel-previous{left:auto;right:58px}.staff-carousel-next{right:14px}.staff-carousel-content{left:18px;right:18px;bottom:20px}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}.nav,.hero-copy,.search,main>.heading,.cards>.card,.benefits,.floor-plan,.dashboard,.staff-carousel{animation:none!important}.cards>.card:hover,.student-room-card:hover,.benefit:hover,.metric-card:hover,.chart-card:hover,.staff-carousel-control:hover,.staff-carousel-dot:hover,.search button:hover,.book:hover,.dashboard-button:hover,.secondary-button:hover,.request-submit:hover{transform:none}}

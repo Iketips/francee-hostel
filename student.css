@@ -1,0 +1,143 @@
+:root{--green:#bd3458;--dark:#751d39;--cream:#fff7f8;--muted:#746a6d;--line:#f0dce1;--rose:#bd3458;--rose-dark:#751d39;--rose-soft:#fff0f3;--rose-pale:#fde6ec}
+*{box-sizing:border-box}
+body{margin:0;background:var(--cream);color:#2b2225;font-family:Arial,Helvetica,sans-serif}
+a{color:inherit;text-decoration:none}
+button,input,select{font:inherit}
+.student-nav{height:72px;max-width:1120px;margin:auto;padding:0 24px;display:flex;align-items:center;justify-content:space-between}
+.student-logo{font-size:21px;font-weight:800;letter-spacing:-.8px}
+.student-logo span{color:var(--rose)}
+.student-nav nav{display:flex;gap:25px;color:var(--muted);font-size:13px}
+.student-nav nav a:hover,.student-footer a:hover{color:var(--rose)}
+main{max-width:1120px;margin:auto;padding:24px}
+.student-kicker{margin:0;color:#a12a4a;font-size:11px;font-weight:bold;text-transform:uppercase;letter-spacing:1.8px}
+.student-primary-link{display:inline-block;margin-top:8px;padding:12px 17px;border-radius:7px;background:white;color:#751d39;font-size:13px;font-weight:bold}
+.student-carousel{margin-top:0}
+.student-carousel-image-wrap{position:relative;height:clamp(360px,48vw,500px);overflow:hidden;border-radius:15px;background:#f5e9ec}
+.student-carousel-image{display:block;width:100%;height:100%;object-fit:cover;object-position:center 55%;transition:opacity .2s}
+.student-carousel-image.photo-change{animation:student-photo-change .45s ease-out both}
+.student-carousel-shade{position:absolute;inset:0;background:linear-gradient(90deg,#36101dcc 0%,#36101d80 48%,#36101d08 100%)}
+.student-carousel-content{position:absolute;z-index:1;left:clamp(24px,7vw,78px);bottom:38px;max-width:610px;color:white}
+.student-carousel-content>.student-kicker{color:#ffdce5}
+.student-carousel-content h1{margin:12px 0;font-size:clamp(36px,6vw,60px);line-height:1.04;letter-spacing:-2px}
+.student-carousel-content>p:not(.student-kicker){max-width:490px;color:#fff0f3;font-size:14px;line-height:1.7}
+.student-carousel-content>strong{display:block;margin-top:18px;color:#ffe0e8;font-size:12px}
+.student-carousel-control{position:absolute;top:50%;display:grid;place-items:center;width:42px;height:42px;transform:translateY(-50%);border:1px solid #ffffff80;border-radius:50%;background:#36101d99;color:white;font-size:29px;line-height:1;cursor:pointer}
+.student-carousel-control{z-index:2}
+.student-carousel-control:hover{background:#751d39}
+.student-carousel-previous{left:16px}
+.student-carousel-next{right:16px}
+.student-carousel-footer{display:flex;justify-content:space-between;align-items:center;padding:10px 3px;color:var(--muted);font-size:11px}
+.student-carousel-dots{display:flex;align-items:center;gap:7px}
+.student-carousel-dot{width:9px;height:9px;padding:0;border:0;border-radius:50%;background:#e2bdc7;cursor:pointer}
+.student-carousel-dot.active{width:23px;border-radius:8px;background:var(--rose)}
+.student-carousel-dot:focus-visible,.student-carousel-control:focus-visible{outline:3px solid #bd345880;outline-offset:3px}
+.student-account-section,.student-availability,.student-room-section,.student-issue-section{margin-top:38px}
+.student-account-session{display:flex;align-items:center;gap:10px;color:var(--muted);font-size:12px}
+.student-account-signout{padding:8px 10px;border:1px solid var(--line);border-radius:6px;background:#fff;color:var(--dark);font-size:11px;font-weight:bold;cursor:pointer}
+.student-account-signout:hover{background:var(--rose-soft)}
+.student-account-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+.student-account-grid[hidden],.student-account-signout[hidden]{display:none}
+.student-account-card{display:grid;align-content:start;gap:12px;padding:20px;border:1px solid var(--line);border-radius:10px;background:white}
+.student-account-card h3{margin:0 0 2px;color:var(--dark);font-size:16px}
+.student-account-card label{display:grid;gap:6px;color:#51464a;font-size:12px;font-weight:bold}
+.student-account-card input{width:100%;padding:10px;border:1px solid var(--line);border-radius:6px;background:white;color:#2b2225;font:inherit;font-size:13px}
+.student-account-card label small{color:var(--muted);font-size:11px;font-weight:normal}
+.student-account-status{min-height:17px;margin:0;color:var(--muted);font-size:12px;line-height:1.45}
+.student-account-status.error{color:#a72e26}
+.student-account-status.success{color:var(--rose-dark)}
+.student-account-button{padding:11px 14px;border:0;border-radius:6px;background:var(--rose);color:white;font-size:13px;font-weight:bold;cursor:pointer}
+.student-account-button:hover{background:var(--rose-dark)}
+.student-account-button:disabled,.student-account-signout:disabled{opacity:.6;cursor:wait}
+.student-availability,.student-room-section,.student-issue-section{margin-top:45px}
+.student-section-heading{display:flex;justify-content:space-between;align-items:end;gap:16px;margin-bottom:17px}
+.student-section-heading h2{margin:7px 0;font-size:26px;letter-spacing:-.7px}
+.student-section-heading p:not(.student-kicker){margin:0;color:var(--muted);font-size:13px;line-height:1.5}
+.student-refresh,.student-close{padding:9px 12px;border:1px solid var(--line);border-radius:6px;background:white;color:var(--dark);font-size:12px;font-weight:bold;cursor:pointer}
+.student-refresh:hover,.student-close:hover{background:var(--rose-soft)}
+.student-stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
+.student-stat{padding:17px;background:white;border:1px solid var(--line);border-radius:9px}
+.student-stat span{display:block;color:var(--muted);font-size:12px}
+.student-stat strong{display:block;margin-top:8px;color:var(--dark);font-size:29px}
+.student-chart{margin-top:14px;padding:18px;background:white;border:1px solid var(--line);border-radius:9px}
+.student-chart-legend{display:flex;flex-wrap:wrap;gap:18px;color:#5e5357;font-size:12px}
+.student-chart-legend i{display:inline-block;width:9px;height:9px;margin-right:6px;border-radius:50%}
+.student-occupied-key{background:var(--rose)}
+.student-available-key{background:#f5bac8}
+.student-chart-track{display:flex;height:22px;margin-top:16px;overflow:hidden;border-radius:20px;background:#f5e9ec}
+.student-chart-occupied{width:0;background:var(--rose);transition:width .3s}
+.student-chart-available{width:100%;background:#f5bac8;transition:width .3s}
+.student-chart-caption{margin:10px 0 0;color:var(--muted);font-size:12px}
+.student-room-availability{display:flex;flex-wrap:wrap;gap:8px;margin-top:11px}
+.student-room-availability span{padding:7px 10px;border-radius:20px;background:#fde6ec;color:#751d39;font-size:11px;font-weight:bold}
+.student-room-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:17px}
+.student-room-card{overflow:hidden;border:1px solid var(--line);border-radius:10px;background:white}
+.student-room-photo{height:190px;background-position:center;background-size:cover}
+.student-room-info{padding:16px}
+.student-room-info h3{margin:0;font-size:17px}
+.student-room-price{margin:9px 0;color:var(--rose);font-size:19px;font-weight:bold}
+.student-room-price small{display:block;margin-top:3px;color:var(--muted);font-size:10px;font-weight:normal}
+.student-room-info p{margin:10px 0;color:var(--muted);font-size:12px;line-height:1.55}
+.student-room-info ul{display:flex;flex-wrap:wrap;gap:6px;padding:0;margin:12px 0 15px;list-style:none}
+.student-room-info li{padding:6px 8px;border-radius:4px;background:var(--rose-soft);color:#69575d;font-size:10px}
+.student-room-count{margin:0 0 13px!important;color:var(--dark)!important;font-weight:bold}
+.student-book,.student-submit{width:100%;padding:11px 14px;border:0;border-radius:6px;background:var(--rose);color:white;font-size:13px;font-weight:bold;cursor:pointer}
+.student-book:hover,.student-submit:hover{background:var(--rose-dark)}
+.student-submit:disabled{opacity:.6;cursor:wait}
+.student-privacy{margin:42px 0 18px;padding:22px 25px;border-radius:10px;background:#fde9ee}
+.student-privacy h2{margin:0 0 8px;color:var(--dark);font-size:17px}
+.student-privacy p{margin:0;color:#6c5a60;font-size:12px;line-height:1.65}
+.student-footer{display:flex;justify-content:center;gap:24px;padding:22px 18px;border-top:1px solid var(--line);color:var(--muted);font-size:12px}
+.student-request-dialog{width:min(560px,calc(100% - 28px));max-height:90vh;overflow:auto;padding:25px;border:0;border-radius:12px;box-shadow:0 18px 60px #0004;color:#2b2225}
+.student-request-dialog::backdrop{background:#36101dcc}
+.student-dialog-heading{display:flex;justify-content:space-between;align-items:start;gap:15px}
+.student-dialog-heading h2{margin:0 0 7px;font-size:23px}
+.student-dialog-heading p{margin:0 0 17px;color:var(--muted);font-size:13px;line-height:1.5}
+.student-request-form{display:grid;gap:12px}
+.student-request-form>label:not(.student-consent):not(.student-honeypot){display:grid;gap:6px;color:#51464a;font-size:12px;font-weight:bold}
+.student-request-form input:not([type=checkbox]),.student-request-form select{width:100%;padding:10px;border:1px solid var(--line);border-radius:6px;background:white;color:#2b2225;font-size:13px}
+.student-request-form input[type=file]{padding:8px}
+.student-request-form label small{color:var(--muted);font-weight:normal;font-size:11px;line-height:1.45}
+.student-room-summary{padding:10px;border-radius:6px;background:var(--rose-soft);color:var(--dark);font-size:13px;font-weight:bold}
+.student-consent{display:flex;align-items:start;gap:8px;color:#51464a;font-size:12px;line-height:1.5}
+.student-consent input{margin:2px 0 0}
+.student-honeypot{position:absolute;left:-10000px;width:1px;height:1px;overflow:hidden}
+.student-request-status{min-height:18px;margin:0;color:var(--muted);font-size:12px;line-height:1.5}
+.student-request-status.error{color:#a72e26}
+.student-request-status.success{color:var(--rose-dark)}
+.student-chart-caption.student-request-error{color:#a72e26}
+.student-issue-card{max-width:760px;padding:23px;border:1px solid var(--line);border-radius:11px;background:white;box-shadow:0 8px 28px #7c25380a}
+.student-issue-card-heading{display:flex;align-items:center;gap:12px;margin-bottom:19px}
+.student-issue-icon{display:grid;place-items:center;width:38px;height:38px;border-radius:10px;background:var(--rose-soft);color:var(--rose);font-size:21px;font-weight:bold}
+.student-issue-card-heading h3{margin:0 0 5px;color:var(--dark);font-size:16px}
+.student-issue-card-heading p{margin:0;color:var(--muted);font-size:12px}
+.student-issue-form{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:13px}
+.student-issue-form>label:not(.student-honeypot){display:grid;align-content:start;gap:6px;color:#51464a;font-size:12px;font-weight:bold}
+.student-issue-form input,.student-issue-form select,.student-issue-form textarea{width:100%;padding:10px;border:1px solid var(--line);border-radius:6px;background:white;color:#2b2225;font:inherit;font-size:13px}
+.student-issue-form textarea{resize:vertical;line-height:1.5}
+.student-issue-form label small{color:var(--muted);font-size:11px;font-weight:normal;line-height:1.45}
+.student-issue-description,.student-issue-form .student-issue-status,.student-issue-form .student-submit{grid-column:1/-1}
+.student-issue-status{min-height:18px;margin:0;color:var(--muted);font-size:12px;line-height:1.5}
+.student-issue-status.error{color:#a72e26}
+.student-issue-status.success{color:var(--rose-dark)}
+.room-issue-item{padding:14px 0;border-bottom:1px solid var(--line)}
+.room-issue-item:last-child{border-bottom:0}
+.room-issue-item p{margin:0 0 8px;color:#51464a;font-size:12px;line-height:1.6}
+.room-issue-item strong{color:var(--dark)}
+.room-issue-description{white-space:pre-wrap;overflow-wrap:anywhere}
+.room-issue-actions{display:flex;align-items:center;gap:9px;margin-top:10px}
+.room-issue-actions select{padding:8px;border:1px solid var(--line);border-radius:6px;background:white;color:#51464a;font-size:12px}
+.room-issue-actions button{padding:8px 10px;border:0;border-radius:6px;background:var(--rose);color:white;font-size:11px;font-weight:bold;cursor:pointer}
+.room-issue-actions button:disabled{opacity:.6}
+.student-nav{animation:student-rise-in .5s ease-out both}
+.student-carousel-content{animation:student-rise-in .65s .1s ease-out both}
+.student-account-section,.student-availability,.student-room-section,.student-issue-section,.student-privacy{animation:student-rise-in .6s .12s ease-out both}
+.student-account-card,.student-stat,.student-chart,.student-room-card,.student-issue-card{transition:transform .22s ease,box-shadow .22s ease}
+.student-account-card:hover,.student-stat:hover,.student-issue-card:hover{transform:translateY(-3px);box-shadow:0 12px 28px #7c253814}
+.student-room-card:hover{transform:translateY(-5px);box-shadow:0 14px 30px #7c25381a}
+.student-carousel-control,.student-carousel-dot,.student-primary-link,.student-account-button,.student-book,.student-submit,.student-refresh,.student-close,.student-account-signout,.room-issue-actions button{transition:color .2s ease,background-color .2s ease,border-color .2s ease,box-shadow .2s ease,transform .2s ease}
+.student-carousel-control:hover,.student-primary-link:hover,.student-account-button:hover,.student-book:hover,.student-submit:hover,.student-refresh:hover,.student-close:hover,.room-issue-actions button:hover{transform:translateY(-2px)}
+@keyframes student-rise-in{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:translateY(0)}}
+@keyframes student-photo-change{from{opacity:.45;transform:scale(1.025)}to{opacity:1;transform:scale(1)}}
+@media(max-width:760px){main{padding:18px}.student-room-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.student-stats{grid-template-columns:repeat(2,minmax(0,1fr))}.student-account-grid{grid-template-columns:1fr}}
+@media(max-width:520px){.student-nav{height:62px;padding:0 16px}.student-nav nav{gap:12px;font-size:11px}.student-nav nav a:first-child{display:none}main{padding:12px}.student-section-heading{align-items:start;flex-direction:column}.student-room-grid{grid-template-columns:1fr}.student-room-photo{height:205px}.student-stat strong{font-size:24px}.student-footer{gap:13px;flex-wrap:wrap}.student-request-dialog{padding:18px}.student-issue-card{padding:16px}.student-issue-form{grid-template-columns:1fr}.student-issue-description,.student-issue-form .student-issue-status,.student-issue-form .student-submit{grid-column:auto}.room-issue-actions{align-items:stretch;flex-direction:column}.student-carousel-image-wrap{height:380px}.student-carousel-content{left:20px;right:20px;bottom:22px}.student-carousel-content h1{font-size:37px;letter-spacing:-1px}.student-carousel-content>p:not(.student-kicker){font-size:12px}.student-carousel-control{top:38px;width:36px;height:36px;transform:none}.student-carousel-previous{left:auto;right:62px}.student-carousel-next{right:16px}.student-account-session{align-items:flex-start;flex-direction:column}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}.student-nav,.student-carousel-content,.student-account-section,.student-availability,.student-room-section,.student-issue-section,.student-privacy{animation:none!important}.student-account-card:hover,.student-stat:hover,.student-room-card:hover,.student-issue-card:hover,.student-carousel-control:hover,.student-primary-link:hover,.student-account-button:hover,.student-book:hover,.student-submit:hover,.student-refresh:hover,.student-close:hover,.room-issue-actions button:hover{transform:none}}

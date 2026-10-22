@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Student room portal | FranCee Hostel</title>
+	<link rel="stylesheet" href="dashboard.css">
+	<link rel="stylesheet" href="student.css">
+</head>
+<body>
+	<header class="student-nav">
+		<a class="student-logo" href="#top">FranCee <span>Hostel</span></a>
+		<nav aria-label="Main navigation">
+			<a href="#availability">Live availability</a>
+			<a href="#student-rooms">Rooms</a>
+			<a href="#room-issues">Report an issue</a>
+			<a href="inex.html#dashboard">Staff sign in</a>
+		</nav>
+	</header>
+	<main id="top">
+		<section class="student-carousel" aria-label="FranCee Hostel room photos">
+			<div class="student-carousel-image-wrap">
+				<img class="student-carousel-image" id="student-carousel-image" src="https://images.unsplash.com/photo-1566665797739-1674de7a421a?auto=format&fit=crop&w=1600&q=85" alt="Private hostel bedroom with a regular bed" fetchpriority="high">
+				<div class="student-carousel-shade"></div>
+				<div class="student-carousel-content">
+					<p class="student-kicker">Student room portal</p>
+					<h1>Find your place at FranCee Hostel.</h1>
+					<p>Explore room options and submit a private request. Availability is shared live with hostel staff.</p>
+					<a class="student-primary-link" href="#student-rooms">Explore rooms</a>
+					<strong id="student-carousel-caption">Private ground-floor room</strong>
+				</div>
+				<button class="student-carousel-control student-carousel-previous" id="student-carousel-previous" type="button" aria-label="Show previous room photo">‹</button>
+				<button class="student-carousel-control student-carousel-next" id="student-carousel-next" type="button" aria-label="Show next room photo">›</button>
+			</div>
+			<div class="student-carousel-footer"><div class="student-carousel-dots" id="student-carousel-dots" role="group" aria-label="Choose a room photo"></div><span id="student-carousel-count" aria-live="polite">Photo 1 of 3</span></div>
+		</section>
+		<section class="student-account-section" id="student-account" aria-labelledby="student-account-title">
+			<div class="student-section-heading">
+				<div><p class="student-kicker">Your student account</p><h2 id="student-account-title">Sign up or sign in</h2><p>Accounts are optional. You can still browse rooms, request a stay, or report an issue as a guest.</p></div>
+				<div class="student-account-session" id="student-account-session" aria-live="polite"><span id="student-account-session-label">Checking account status…</span><button class="student-account-signout" id="student-signout" type="button" hidden>Sign out</button></div>
+			</div>
+			<div class="student-account-grid" id="student-account-forms">
+				<form class="student-account-card" id="student-signup-form">
+					<h3>Create a student account</h3>
+					<label for="signup-name">Full name<input id="signup-name" name="full_name" type="text" maxlength="120" autocomplete="name" required></label>
+					<label for="signup-email">Email address<input id="signup-email" name="email" type="email" maxlength="254" autocomplete="email" required></label>
+					<label for="signup-password">Password<input id="signup-password" name="password" type="password" minlength="8" autocomplete="new-password" required><small>Use at least 8 characters.</small></label>
+					<p class="student-account-status" id="signup-status" role="status" aria-live="polite"></p>
+					<button class="student-account-button" type="submit">Sign up</button>
+				</form>
+				<form class="student-account-card" id="student-signin-form">
+					<h3>Welcome back</h3>
+					<label for="signin-email">Email address<input id="signin-email" name="email" type="email" autocomplete="username" required></label>
+					<label for="signin-password">Password<input id="signin-password" name="password" type="password" autocomplete="current-password" required></label>
+					<p class="student-account-status" id="signin-status" role="status" aria-live="polite"></p>
+					<button class="student-account-button" type="submit">Sign in</button>
+				</form>
+			</div>
+		</section>
+		<section class="student-availability" id="availability" aria-labelledby="availability-title">
+			<div class="student-section-heading">
+				<div><p class="student-kicker">Shared live update</p><h2 id="availability-title">Hostel occupancy & rooms remaining</h2><p>Student and staff pages share these counts. No student names or contact details are shown.</p></div>
+				<button class="student-refresh" id="refresh-availability" type="button">Refresh counts</button>
+			</div>
+			<div class="student-stats" id="student-stats" aria-live="polite">
+				<article class="student-stat"><span>People accommodated</span><strong id="people-accommodated">—</strong></article>
+				<article class="student-stat"><span>Rooms remaining today</span><strong id="rooms-remaining">—</strong></article>
+				<article class="student-stat"><span>Total active rooms</span><strong id="total-rooms">—</strong></article>
+				<article class="student-stat"><span>Beds available today</span><strong id="beds-remaining">—</strong></article>
+			</div>
+			<div class="student-chart" role="img" aria-label="Live chart of hostel rooms occupied and available">
+				<div class="student-chart-legend"><span><i class="student-occupied-key"></i>Rooms occupied or reserved</span><span><i class="student-available-key"></i>Rooms remaining</span></div>
+				<div class="student-chart-track"><div class="student-chart-occupied" id="student-chart-occupied"></div><div class="student-chart-available" id="student-chart-available"></div></div>
+				<p class="student-chart-caption" id="availability-caption" role="status">Loading live hostel availability…</p>
+			</div>
+			<div class="student-room-availability" id="room-type-availability" aria-live="polite"></div>
+		</section>
+		<section class="student-room-section" id="student-rooms">
+			<div class="student-section-heading"><div><p class="student-kicker">Academic-year stays</p><h2>Choose a room</h2><p>Each room includes a private toilet, bath, kitchen, and a regular bed—no bunks.</p></div></div>
+			<div class="student-room-grid" id="student-room-grid"></div>
+		</section>
+		<section class="student-issue-section" id="room-issues" aria-labelledby="room-issues-title">
+			<div class="student-section-heading">
+				<div><p class="student-kicker">Student support</p><h2 id="room-issues-title">Report a room issue</h2><p>Tell the hostel admin which room needs attention and what is wrong. Only authorized staff can see your report.</p></div>
+			</div>
+			<div class="student-issue-card">
+				<div class="student-issue-card-heading"><span class="student-issue-icon" aria-hidden="true">!</span><div><h3>How can we help?</h3><p>Your report goes directly to the private staff dashboard.</p></div></div>
+				<form class="student-issue-form" id="room-issue-form">
+					<label for="issue-room">Room number<select id="issue-room" name="room_name" required><option value="">Choose your room</option></select></label>
+					<label for="issue-category">Issue type<select id="issue-category" name="category" required><option value="">Choose an issue</option><option value="Plumbing">Plumbing / water</option><option value="Electrical">Electrical</option><option value="Cleaning">Cleaning</option><option value="Furniture">Furniture / fixtures</option><option value="Internet">Internet / connectivity</option><option value="Security">Security</option><option value="Other">Other</option></select></label>
+					<label for="issue-priority">Priority<select id="issue-priority" name="priority" required><option value="normal">Normal</option><option value="high">Urgent</option></select></label>
+					<label for="issue-name">Your name<input id="issue-name" name="student_name" type="text" maxlength="120" autocomplete="name" required></label>
+					<label for="issue-phone">Phone number<input id="issue-phone" name="phone" type="tel" maxlength="32" autocomplete="tel" placeholder="+233…" required></label>
+					<label class="student-issue-description" for="issue-description">Describe the issue<textarea id="issue-description" name="description" rows="5" minlength="10" maxlength="2000" placeholder="Tell us what happened and where in the room…" required></textarea><small>Please don’t include passwords, financial details, or sensitive identity information.</small></label>
+					<label class="student-honeypot" aria-hidden="true">Leave this field empty<input name="website" type="text" tabindex="-1" autocomplete="off"></label>
+					<p class="student-issue-status" id="issue-status" role="status" aria-live="polite"></p>
+					<button class="student-submit" id="issue-submit" type="submit">Send issue to hostel admin</button>
+				</form>
+			</div>
+		</section>
+		<section class="student-privacy"><h2>Your information stays private</h2><p>Room requests and identity documents are shared with authorized hostel staff only. The public availability chart shows aggregate counts, never student information. Your request is not a confirmed booking; staff will contact you to follow up.</p></section>
+	</main>
+	<footer class="student-footer"><span>© 2026 FranCee Hostel</span><a href="inex.html">Visit the hostel site</a><a href="inex.html#dashboard">Staff sign in</a></footer>
+	<dialog class="student-request-dialog" id="request-dialog" aria-labelledby="request-title">
+		<div class="student-dialog-heading"><div><h2 id="request-title">Request a room</h2><p>Enter your details and upload proof of identity to contact hostel staff.</p></div><button class="student-close" id="request-close" type="button" aria-label="Close request form">Close</button></div>
+		<form class="student-request-form" id="room-request-form">
+			<div class="student-room-summary" id="request-room-summary"></div>
+			<label for="request-name">Full name<input id="request-name" name="full_name" type="text" maxlength="120" autocomplete="name" required></label>
+			<label for="request-phone">Phone number<input id="request-phone" name="phone" type="tel" maxlength="32" autocomplete="tel" placeholder="+233…" required></label>
+			<label for="request-email">Email address (optional)<input id="request-email" name="email" type="email" maxlength="254" autocomplete="email"></label>
+			<label for="request-checkin">Check-in date<input id="request-checkin" name="check_in" type="date" required></label>
+			<label for="request-checkout">Check-out date<input id="request-checkout" name="check_out" type="date" required></label>
+			<label for="request-guests">People<select id="request-guests" name="guest_count" required></select></label>
+			<label for="request-identity">Proof of identity<input id="request-identity" name="identity" type="file" accept="image/jpeg,image/png,application/pdf,.jpg,.jpeg,.png,.pdf" required><small>JPG, PNG, or PDF up to 5 MB. Only authorized hostel staff can access the document.</small></label>
+			<label class="student-consent"><input id="request-consent" name="consent" type="checkbox" required><span>I agree to share these details and my identity document with FranCee Hostel for this room request.</span></label>
+			<label class="student-honeypot" aria-hidden="true">Leave this field empty<input name="website" type="text" tabindex="-1" autocomplete="off"></label>
+			<p class="student-request-status" id="request-status" role="status" aria-live="polite"></p>
+			<button class="student-submit" id="request-submit" type="submit">Send room request</button>
+		</form>
+	</dialog>
+	<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+	<script src="supabase-config.js"></script>
+	<script src="room-requests.js"></script>
+	<script src="student.js"></script>
+</body>
+</html>
