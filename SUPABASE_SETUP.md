@@ -2,18 +2,23 @@
 
 The staff dashboard uses Supabase for shared FranCee Hostel records. The public page lists three room types with separate ground-floor, first-floor, and double-room photos.
 
-## 1. Create the database
+## 1. Connected Supabase project
 
-1. Create a Supabase project.
-2. Copy its **Project URL** and **publishable/anon key** into `supabase-config.js`. This static configuration is shared with public-page visitors so students can submit requests from their own devices.
-3. Open **SQL Editor**, paste the full contents of `supabase-schema.sql`, and run it.
-4. In **Authentication** settings, enable email/password sign-ups and email confirmation for student accounts. Add your deployed student portal URL to the allowed redirect URLs if you customize the email confirmation link.
-5. For each invited staff account, copy its user ID from the Supabase users list and add it to the staff allowlist in SQL Editor:
+The FranCee Hostel site is connected to the `fracee` Supabase project. Its Project URL and browser-safe publishable key are configured in `supabase-config.js`. The current `supabase-schema.sql` has been applied; it creates the hostel tables, row-level security policies, private identity-document bucket, and seeds 33 rooms with 34 beds.
+
+The publishable key is intentionally public browser configuration and is committed with the public site. Never put a Supabase secret or service-role key in `supabase-config.js` or any other browser file.
+
+For future schema changes, back up the project before applying the updated SQL in **SQL Editor**. The schema is designed to be re-applied, but applying schema changes to a live database should still be done deliberately.
+
+In **Authentication** settings, enable email/password sign-ups and email confirmation for student accounts. Add your deployed student portal URL to the allowed redirect URLs if you customize the email confirmation link.
+
+For each invited staff account, copy its user ID from the Supabase users list and add it to the staff allowlist in SQL Editor:
 
    ```sql
    insert into public.staff_members (user_id, display_name)
    values ('AUTH-USER-UUID', 'Staff name');
    ```
+
 
 Only users listed in `staff_members` can read or change staff records. Do not add student accounts to `staff_members`. Student accounts use a separate browser session from the staff dashboard.
 
