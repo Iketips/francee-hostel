@@ -4,7 +4,12 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>FranCee Hostel | Room booking</title>
+	<meta name="theme-color" content="#751d39">
+	<link rel="manifest" href="manifest.webmanifest">
+	<link rel="icon" href="icons/icon-192.png" type="image/png">
+	<link rel="apple-touch-icon" href="icons/icon-192.png">
 	<link rel="stylesheet" href="dashboard.css">
+	<link rel="stylesheet" href="pwa.css">
 	<style>
 		:root{--green:#bd3458;--dark:#751d39;--cream:#fff7f8;--muted:#746a6d;--line:#f0dce1;--orange:#e99aab}
 		*{box-sizing:border-box}body{margin:0;background:var(--cream);color:#202823;font-family:Arial,Helvetica,sans-serif}a{color:inherit;text-decoration:none}button,input,select{font:inherit}.nav{height:76px;padding:0 max(calc((100% - 1120px)/2),24px);display:flex;align-items:center;justify-content:space-between}.logo{font-size:21px;font-weight:800;letter-spacing:-.8px}.logo span{color:var(--green)}.nav-links{display:flex;align-items:center;gap:28px;color:var(--muted);font-size:14px}.nav-links a:hover{color:var(--green)}.nav-links .outline{border:1px solid var(--line);border-radius:20px;padding:10px 16px;color:#202823}
@@ -184,5 +189,6 @@
 		requestForm.addEventListener('submit',async event=>{event.preventDefault();if(!selectedStay||!requestForm.reportValidity())return;const file=document.getElementById('request-identity').files[0];if(!file||!['image/jpeg','image/png','application/pdf'].includes(file.type)||file.size>5*1024*1024){requestStatus.textContent='Choose a JPG, PNG, or PDF identity document no larger than 5 MB.';requestStatus.className='request-status error';return;}if(requestCheckOut.value<=requestCheckIn.value||requestCheckOut.value>dateValue(addMonths(new Date(requestCheckIn.value+'T12:00:00'),8))){requestStatus.textContent='Choose a check-out date after check-in and within the 8-month stay limit.';requestStatus.className='request-status error';return;}if(requestForm.elements.website.value){requestDialog.close();return;}const submitButton=document.getElementById('request-submit');submitButton.disabled=true;requestStatus.textContent='Sending your request securely…';requestStatus.className='request-status';try{const result=await window.FranCeeHostel.submitRequest({full_name:requestForm.elements.full_name.value.trim(),phone:requestForm.elements.phone.value.trim(),email:requestForm.elements.email.value.trim(),room_name:selectedStay.name,guest_count:Number(requestGuests.value),check_in:requestCheckIn.value,check_out:requestCheckOut.value,identity:file});requestStatus.textContent='Your room request was sent to FranCee Hostel staff. Reference: '+result.id;requestStatus.className='request-status success';requestForm.reset();setTimeout(()=>requestDialog.close(),3500);}catch(error){requestStatus.textContent=error.message||'Your request could not be sent. Please try again.';requestStatus.className='request-status error';}finally{submitButton.disabled=false;}});
 		renderFloorLayout();render();refreshPublicAvailability();window.setInterval(refreshPublicAvailability,60000);document.addEventListener('visibilitychange',()=>{if(!document.hidden)refreshPublicAvailability();});
 	</script>
+	<script src="pwa.js"></script>
 </body>
 </html>

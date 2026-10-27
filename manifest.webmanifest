@@ -1,0 +1,44 @@
+{
+	"name": "FranCee Hostel",
+	"short_name": "FranCee",
+	"description": "Room requests, hostel information, student support, and staff tools for FranCee Hostel.",
+	"lang": "en",
+	"start_url": "./index.html",
+	"scope": "./",
+	"display": "standalone",
+	"orientation": "portrait-primary",
+	"background_color": "#fff7f8",
+	"theme_color": "#751d39",
+	"icons": [
+		{
+			"src": "./icons/icon-192.png",
+			"sizes": "192x192",
+			"type": "image/png",
+			"purpose": "any"
+		},
+		{
+			"src": "./icons/icon-512.png",
+			"sizes": "512x512",
+			"type": "image/png",
+			"purpose": "any"
+		},
+		{
+			"src": "./icons/icon-512.png",
+			"sizes": "512x512",
+			"type": "image/png",
+			"purpose": "maskable"
+		}
+	],
+	"shortcuts": [
+		{
+			"name": "Student portal",
+			"short_name": "Student",
+			"url": "./student.html"
+		},
+		{
+			"name": "Staff dashboard",
+			"short_name": "Staff",
+			"url": "./inex.html#dashboard"
+		}
+	]
+}

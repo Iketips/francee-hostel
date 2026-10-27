@@ -1,0 +1,54 @@
+.pwa-install-button {
+	position: fixed;
+	z-index: 20;
+	right: max(18px, env(safe-area-inset-right));
+	bottom: max(18px, env(safe-area-inset-bottom));
+	padding: 12px 16px;
+	border: 0;
+	border-radius: 999px;
+	background: #751d39;
+	color: #fff;
+	box-shadow: 0 6px 20px #36101d40;
+	font-weight: 700;
+	cursor: pointer;
+}
+
+.pwa-install-button:hover {
+	background: #bd3458;
+}
+
+.pwa-install-button:focus-visible {
+	outline: 3px solid #bd345880;
+	outline-offset: 3px;
+}
+
+.pwa-install-status {
+	position: fixed;
+	z-index: 20;
+	right: max(18px, env(safe-area-inset-right));
+	bottom: max(76px, calc(env(safe-area-inset-bottom) + 70px));
+	max-width: min(360px, calc(100vw - 36px));
+	padding: 12px 15px;
+	border-radius: 8px;
+	background: #36101d;
+	color: #fff;
+	box-shadow: 0 6px 20px #36101d40;
+	font-size: 13px;
+	line-height: 1.5;
+}
+
+.pwa-install-status[hidden],
+.pwa-install-button[hidden] {
+	display: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+	.pwa-install-button {
+		animation: pwa-install-appear 0.3s ease-out both;
+	}
+
+	@keyframes pwa-install-appear {
+		from { opacity: 0; transform: translateY(8px); }
+		to { opacity: 1; transform: translateY(0); }
+	}
+}

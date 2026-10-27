@@ -2,6 +2,12 @@
 
 The staff dashboard uses Supabase for shared FranCee Hostel records. The public page lists three room types with separate ground-floor, first-floor, and double-room photos.
 
+## Install FranCee Hostel as an app
+
+The site is an installable progressive web app (PWA) and can be added from its HTTPS-hosted URL on Android, iPhone, and desktop browsers. Open the public hostel page and choose **Install app**; on iPhone/iPad, use the browser's **Share** menu and choose **Add to Home Screen**. The app caches its pages and local scripts for offline viewing, but sign-in, live availability, room requests, and issue submissions require an internet connection.
+
+The PWA manifest, app icons, install prompt, and service worker are `manifest.webmanifest`, `icons/`, `pwa.js`, and `sw.js`. Keep these assets at the site root (or update their relative paths together) when changing hosting.
+
 ## 1. Connected Supabase project
 
 The FranCee Hostel site is connected to the `fracee` Supabase project. Its Project URL and browser-safe publishable key are configured in `supabase-config.js`. The current `supabase-schema.sql` has been applied; it creates the hostel tables, row-level security policies, private identity-document bucket, and seeds 33 rooms with 34 beds.
@@ -18,7 +24,6 @@ For each invited staff account, copy its user ID from the Supabase users list an
    insert into public.staff_members (user_id, display_name)
    values ('AUTH-USER-UUID', 'Staff name');
    ```
-
 
 Only users listed in `staff_members` can read or change staff records. Do not add student accounts to `staff_members`. Student accounts use a separate browser session from the staff dashboard.
 
